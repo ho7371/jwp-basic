@@ -13,6 +13,11 @@ public class DataBase {
     public static void addUser(User user) {
         users.put(user.getUserId(), user);
     }
+   
+    public static void updateUser(String userId, User user) {
+    	users.remove(userId);
+    	addUser(user);
+    }
 
     public static User findUserById(String userId) {
         return users.get(userId);

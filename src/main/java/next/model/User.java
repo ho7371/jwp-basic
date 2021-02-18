@@ -29,7 +29,19 @@ public class User {
         return email;
     }
 
-    @Override
+    public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;

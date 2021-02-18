@@ -72,25 +72,24 @@
 <div class="container" id="main">
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
+        	<form action="/user/updateUser" method="post">
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>#</th> <th>사용자 아이디</th> <th>이름</th> <th>이메일</th><th></th>
+                    <th>수정할 사용자 아이디</th> <th>이름</th> <th>이메일</th> <th>비밀번호</th> <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${users}" var="user" varStatus="status">
                     <tr>
-                        <th scope="row">${status.count}</th>
-                        <td>${user.userId}</td>
-                        <td>${user.name}</td>
-                        <td>${user.email}</td>
-                        <td><a href="/user/updateUserForm?userId=${user.userId}" class="btn btn-success" role="button">수정</a>
-                        </td>
+                        <td><input type="hidden" name="userId" value="${user.userId}"> ${user.userId}</td>
+                        <td><input type="text" name="name" value="${user.name}"/></td>
+                        <td><input type="email" name="email" value="${user.email}"/></td>
+                        <td><input type="password" name="password" placeholder="비밀번호"/></td>
+                    	<td><input type="submit" class="btn btn-success" value="수정"></td>
                     </tr>
-                </c:forEach>
                 </tbody>
             </table>
+            </form>
         </div>
     </div>
 </div>
